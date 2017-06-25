@@ -19,7 +19,7 @@
     <div id="report_selector_menu">
         <strong>Example queries:</strong><div id="reports_dropdown"></div>
     </div>
-    <a href="https://mixpanel.com/help/custom-query/" id="docs" target="_blank">Documentation</a>
+    <a href="https://mixpanel.com/help/reference/jql" id="docs" target="_blank">Documentation</a>
 
     <div id="editor">
 </div> <!-- weird formatting required for default code to look good -->
@@ -178,7 +178,7 @@
             var params = JSON.parse($("#script_params").val());
 
             console.log(params)
-            MP.api.custom_query(editor.getValue(), params)
+            MP.api.jql(editor.getValue(), params)
                 .done(function(resp) {
                     var stringified = JSON.stringify(resp, undefined, 2);
                     set_json_output(stringified);
